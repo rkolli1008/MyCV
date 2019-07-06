@@ -7,7 +7,7 @@ A project for My CV based on Kotlin MVVM clean architecture
 1. API Service -> API Service Unit Test with api response mock files
 2. DAO -> DAO Unit Test
 3. Repository -> Repository Unit Test
-4. ViewModel -> ViewModel Unit Test
+4. ViewModel -> ViewModel Unit Tests
 5. Implmentating UI & Layouts 
 
 ## Architecture
