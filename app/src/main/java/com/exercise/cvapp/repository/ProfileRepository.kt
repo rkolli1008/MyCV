@@ -3,7 +3,7 @@ package com.exercise.cvapp.repository
 import androidx.lifecycle.LiveData
 import com.exercise.cvapp.database.ProfileDatabase
 import com.exercise.cvapp.models.Profile
-import com.exercise.cvapp.network.ProfileApi
+import com.exercise.cvapp.models.network.ProfileApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

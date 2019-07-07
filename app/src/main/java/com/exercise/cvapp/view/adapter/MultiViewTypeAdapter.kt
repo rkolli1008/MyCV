@@ -1,4 +1,4 @@
-package com.exercise.cvapp.profile
+package com.exercise.cvapp.view.adapter
 
 import android.annotation.SuppressLint
 import android.text.SpannableString
@@ -84,7 +84,9 @@ class MultiViewTypeAdapter() :
                     false
                 )
             )
-            CONTACT -> ContactViewHolder(ContactCardBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+            CONTACT -> ContactViewHolder(
+                ContactCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            )
             EXPERIENCE -> ExperienceViewHolder(
                 ExperienceCardBinding.inflate(
                     LayoutInflater.from(parent.context),

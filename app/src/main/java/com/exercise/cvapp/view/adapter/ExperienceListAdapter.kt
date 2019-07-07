@@ -1,4 +1,4 @@
-package com.exercise.cvapp.profile
+package com.exercise.cvapp.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,7 +12,13 @@ import com.exercise.cvapp.models.Experience
 
 class ExperienceListAdapter(private val dataSource: List<Experience>): RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ExperienceViewHolder(ExperienceListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return ExperienceViewHolder(
+            ExperienceListItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int {

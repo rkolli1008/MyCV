@@ -1,4 +1,4 @@
-package com.exercise.cvapp
+package com.exercise.cvapp.util
 
 import android.view.View
 import android.widget.ImageView
@@ -7,8 +7,9 @@ import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.exercise.cvapp.R
 import com.exercise.cvapp.models.Profile
-import com.exercise.cvapp.viewmodel.ProfileApiStatus
+import com.exercise.cvapp.view.viewmodel.ProfileApiStatus
 
 /**
  * Uses the Glide library to load an image by URL into an [ImageView]

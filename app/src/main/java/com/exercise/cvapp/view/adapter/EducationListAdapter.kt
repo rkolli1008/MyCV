@@ -1,4 +1,4 @@
-package com.exercise.cvapp.profile
+package com.exercise.cvapp.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,7 +12,13 @@ import com.exercise.cvapp.models.Education
 
 class EducationListAdapter(private val dataSource: List<Education>): RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return EducationViewHolder(EducationListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return EducationViewHolder(
+            EducationListItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int {

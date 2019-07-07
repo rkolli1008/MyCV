@@ -1,4 +1,4 @@
-package com.exercise.cvapp.viewmodel
+package com.exercise.cvapp.view.viewmodel
 
 import android.app.Application
 import android.content.Context

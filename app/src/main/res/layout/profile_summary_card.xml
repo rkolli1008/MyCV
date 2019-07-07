@@ -6,7 +6,7 @@
     <data>
         <variable
                 name="viewModel"
-                type="com.exercise.cvapp.viewmodel.ProfileViewModel"/>
+                type="com.exercise.cvapp.view.viewmodel.ProfileViewModel"/>
     </data>
     <androidx.cardview.widget.CardView android:id="@+id/card_view"
                                        android:layout_width="match_parent"

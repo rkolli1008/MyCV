@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.exercise.cvapp.profile.ProfileFragment"
+        android:name="com.exercise.cvapp.view.ui.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile"/>
 </navigation>

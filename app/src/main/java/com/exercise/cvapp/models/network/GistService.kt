@@ -1,4 +1,4 @@
-package com.exercise.cvapp.network
+package com.exercise.cvapp.models.network
 
 import com.exercise.cvapp.models.Profile
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory

@@ -1,9 +1,8 @@
-package com.exercise.cvapp
+package com.exercise.cvapp.view.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProviders
-import com.exercise.cvapp.viewmodel.ProfileViewModel
+import com.exercise.cvapp.R
 import com.facebook.stetho.Stetho
 
 class CvActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.exercise.cvapp.profile
+package com.exercise.cvapp.view.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.exercise.cvapp.databinding.FragmentProfileBinding
-import com.exercise.cvapp.viewmodel.ProfileViewModel
+import com.exercise.cvapp.view.adapter.MultiViewTypeAdapter
+import com.exercise.cvapp.view.viewmodel.ProfileViewModel
 
 class ProfileFragment : Fragment() {
 
