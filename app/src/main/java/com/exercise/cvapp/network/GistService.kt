@@ -9,7 +9,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-private const val BASE_URL = "https://gist.githubusercontent.com/rkolli1008/f9717e4ff9eb0b36037fede54fee153e/raw/5dfdd476db7431fd0213f7a0fc6bcf8a3b415039/"
+private const val BASE_URL =
+    "https://gist.githubusercontent.com/rkolli1008/f9717e4ff9eb0b36037fede54fee153e/raw/5dfdd476db7431fd0213f7a0fc6bcf8a3b415039/"
 
 /**
  * Build the Moshi object that Retrofit will be using, making sure to add the Kotlin adapter for
@@ -40,14 +41,12 @@ interface GistApiService {
      * HTTP method
      */
     @GET("profile.json")
-    fun getProfileAsync():
-    // The Coroutine Call Adapter allows us to return a Deferred, a Job with a result
-            Deferred<Profile>
+    fun getProfileAsync(): Deferred<Profile>
 }
 
 /**
  * A public Api object that exposes the lazy-initialized Retrofit service
  */
 object ProfileApi {
-    val retrofitService : GistApiService by lazy { retrofit.create(GistApiService::class.java) }
+    val retrofitService: GistApiService by lazy { retrofit.create(GistApiService::class.java) }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
@@ -12,72 +12,106 @@
                                        android:layout_width="match_parent"
                                        android:layout_height="wrap_content"
                                        android:layout_margin="2dp"
-                                       card_view:cardElevation="1dp">
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="vertical">
+                                       app:cardElevation="1dp">
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                           android:layout_height="wrap_content"
+                                                           android:layout_marginStart="16dp">
             <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/skills_label"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/skills"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
+                    app:layout_constraintVertical_chainStyle="packed"
                     android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="16dp"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/environment_label"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"/>
             <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/environment_label"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Environment"
+                    android:text="@string/environment"
                     android:textStyle="bold"
                     android:textSize="14sp"
-                    android:layout_marginLeft="16dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/skills_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/environment"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="4dp"/>
             <TextView
                     android:id="@+id/environment"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     tools:text="environment"
-                    android:layout_marginLeft="16dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/environment_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/methodology_label"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="8dp"/>
             <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/methodology_label"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Methodologies"
+                    android:text="@string/methodologies"
                     android:textStyle="bold"
                     android:textSize="14sp"
-                    android:layout_marginLeft="16dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/environment"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/methodology"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="4dp"/>
             <TextView
                     android:id="@+id/methodology"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     tools:text="methodology"
-                    android:layout_marginLeft="16dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/methodology_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/technologies_label"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="8dp"/>
             <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/technologies_label"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Technologies"
+                    android:text="@string/technologies"
                     android:textStyle="bold"
                     android:textSize="14sp"
-                    android:layout_marginLeft="16dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/methodology"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/technologies"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="4dp"/>
             <TextView
                     android:id="@+id/technologies"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     tools:text="language"
-                    android:layout_marginLeft="16dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/technologies_label"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/languages_label"
+                    app:layout_constraintStart_toStartOf="parent"/>
             <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/languages_label"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Programming Languages"
+                    android:text="@string/programming_languages"
                     android:textStyle="bold"
                     android:textSize="14sp"
-                    android:layout_marginLeft="16dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/technologies"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/languages"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="4dp"/>
             <TextView
                     android:id="@+id/languages"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     tools:text="language"
                     android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="16dp"/>
-        </LinearLayout>
+                    app:layout_constraintTop_toBottomOf="@+id/languages_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 </layout>

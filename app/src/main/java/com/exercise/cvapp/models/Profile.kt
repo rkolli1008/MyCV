@@ -20,17 +20,3 @@ data class Profile(
     val educationList: List<Education>,
     @Embedded var skills: Skills? = null
 ): Parcelable
-
-
-/*
-fun Profile.asDatabaseModel(): DatabaseProfile {
-    return DatabaseProfile(
-        name = name,
-        profile_image = profile_image,
-        location = location,
-        contact = contact,
-        summary = summary,
-        experienceList = experienceList,
-        educationList = educationList,
-        skills = skills)
-}*/

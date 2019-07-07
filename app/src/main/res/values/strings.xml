@@ -4,4 +4,8 @@
     <string name="experience">Experience</string>
     <string name="skills">Skills</string>
     <string name="education">Education</string>
+    <string name="environment">Environment</string>
+    <string name="methodologies">Methodologies</string>
+    <string name="technologies">Technologies</string>
+    <string name="programming_languages">Programming Languages</string>
 </resources>

@@ -1,47 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
                 name="viewModel"
                 type="com.exercise.cvapp.viewmodel.ProfileViewModel"/>
     </data>
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal">
+            android:layout_marginBottom="8dp">
         <ImageView
                 android:id="@+id/logo_url"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="16dp"/>
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/duration"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"/>
+        <TextView
+                android:id="@+id/role"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="Role"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintVertical_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@+id/logo_url"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/company_name"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
+        <TextView
+                android:id="@+id/company_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="Company Name"
+                app:layout_constraintTop_toBottomOf="@+id/role"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/duration"
+                app:layout_constraintStart_toStartOf="@+id/role" android:layout_marginEnd="8dp"/>
+        <TextView
+                android:id="@+id/duration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="Duration"
+                app:layout_constraintTop_toBottomOf="@+id/company_name"
+                app:layout_constraintStart_toEndOf="@+id/logo_url"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"/>
 
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="vertical">
-            <TextView
-                    android:id="@+id/role"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="16dp"/>
-            <TextView
-                    android:id="@+id/company_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="16dp"/>
-            <TextView
-                    android:id="@+id/duration"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="16dp"/>
-        </LinearLayout>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
