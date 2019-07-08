@@ -12,6 +12,6 @@ A project for My CV based on Kotlin MVVM architecture
 - MVVM Architecture
 - Architecture Components (Lifecycle, LiveData, ViewModel, Room Persistence)
 - DataBinding
-- [Retrofit2 & Gson](https://github.com/square/retrofit) for constructing the REST API
+- [Retrofit2 & Moshi](https://github.com/square/retrofit) for constructing the REST API
 - [Glide](https://github.com/bumptech/glide) for loading images
 - [Stetho](https://github.com/facebook/stetho) for debugging persistence data & network packets
