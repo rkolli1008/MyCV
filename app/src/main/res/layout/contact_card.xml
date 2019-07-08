@@ -106,6 +106,5 @@
                     app:layout_constraintTop_toTopOf="@+id/email_label"
                     android:layout_marginStart="8dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.cardview.widget.CardView>
 </layout>

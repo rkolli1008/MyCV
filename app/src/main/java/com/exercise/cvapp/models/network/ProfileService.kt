@@ -33,7 +33,7 @@ private val retrofit = Retrofit.Builder()
 /**
  * A public interface that exposes the [getProfileAsync] method
  */
-interface GistApiService {
+interface ProfileService {
     /**
      * Returns a Coroutine [Deferred] [Profile] which can be fetched with await() if
      * in a Coroutine scope.
@@ -48,5 +48,5 @@ interface GistApiService {
  * A public Api object that exposes the lazy-initialized Retrofit service
  */
 object ProfileApi {
-    val retrofitService: GistApiService by lazy { retrofit.create(GistApiService::class.java) }
+    val RETROFIT_SERVICE: ProfileService by lazy { retrofit.create(ProfileService::class.java) }
 }

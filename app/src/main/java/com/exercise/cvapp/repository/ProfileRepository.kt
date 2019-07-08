@@ -25,7 +25,7 @@ class ProfileRepository(private val database: ProfileDatabase) {
      */
     suspend fun refreshProfile() {
         withContext(Dispatchers.IO) {
-            val profile = ProfileApi.retrofitService.getProfileAsync().await()
+            val profile = ProfileApi.RETROFIT_SERVICE.getProfileAsync().await()
             database.profileDao.insertAll(profile)
         }
     }
