@@ -1,7 +1,7 @@
 # MyCV
 A project for My CV based on Kotlin MVVM architecture
 
-![gif](https://media.giphy.com/media/ggtU647WxwjYU4y53f/giphy.gif)
+![gif](https://media.giphy.com/media/WTFm3MEMI1xQidVYMu/giphy.gif)
 
 ## Architecture
 
