@@ -11,13 +11,13 @@ import com.exercise.cvapp.util.ExperienceListConverter
 @Dao
 interface ProfileDao {
     @Query("select * from Profile")
-    fun getProfile(): LiveData<Profile>
+    fun getProfileInRoom(): LiveData<Profile>
 
-    @Insert(onConflict = REPLACE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg profile: Profile)
 }
 
-@Database(entities = [Profile::class], version = 1, exportSchema = false)
+@Database(entities = [Profile::class], version = 1, exportSchema = true)
 @TypeConverters(value = [ExperienceListConverter::class, EducationListConverter::class])
 abstract class ProfileDatabase : RoomDatabase() {
     abstract val profileDao: ProfileDao
@@ -25,13 +25,14 @@ abstract class ProfileDatabase : RoomDatabase() {
 
 private lateinit var INSTANCE: ProfileDatabase
 
+@Synchronized
 fun getDatabase(context: Context): ProfileDatabase {
-    synchronized(ProfileDatabase::class.java) {
-        if (!::INSTANCE.isInitialized) {
-            INSTANCE = Room.databaseBuilder(context.applicationContext,
-                    ProfileDatabase::class.java,
-                    "profile").build()
-        }
+    if (!::INSTANCE.isInitialized) {
+        INSTANCE = Room.databaseBuilder(
+            context.applicationContext,
+            ProfileDatabase::class.java,
+            "profile"
+        ).build()
     }
     return INSTANCE
 }

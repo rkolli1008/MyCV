@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.exercise.cvapp.R
 import com.facebook.stetho.Stetho
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CvActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

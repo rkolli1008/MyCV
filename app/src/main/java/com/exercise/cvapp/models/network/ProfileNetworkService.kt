@@ -10,7 +10,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 private const val BASE_URL =
-    "https://gist.githubusercontent.com/rkolli1008/f9717e4ff9eb0b36037fede54fee153e/raw/5dfdd476db7431fd0213f7a0fc6bcf8a3b415039/"
+    "https://storage.googleapis.com/mycv_bucket/"
 
 /**
  * Build the Moshi object that Retrofit will be using, making sure to add the Kotlin adapter for
@@ -33,7 +33,7 @@ private val retrofit = Retrofit.Builder()
 /**
  * A public interface that exposes the [getProfileAsync] method
  */
-interface ProfileService {
+interface ProfileApi {
     /**
      * Returns a Coroutine [Deferred] [Profile] which can be fetched with await() if
      * in a Coroutine scope.
@@ -47,6 +47,6 @@ interface ProfileService {
 /**
  * A public Api object that exposes the lazy-initialized Retrofit service
  */
-object ProfileApi {
-    val RETROFIT_SERVICE: ProfileService by lazy { retrofit.create(ProfileService::class.java) }
+object ProfileNetworkService {
+    val RETROFIT_SERVICE: ProfileApi by lazy { retrofit.create(ProfileApi::class.java) }
 }

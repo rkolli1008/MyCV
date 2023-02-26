@@ -5,33 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.exercise.cvapp.databinding.FragmentProfileBinding
 import com.exercise.cvapp.view.adapter.MultiViewTypeAdapter
 import com.exercise.cvapp.view.viewmodel.ProfileViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
-    /**
-     * Lazily initialize our [ProfileFragment].
-     */
-    private val viewModel: ProfileViewModel by lazy {
-        val activity = requireNotNull(this.activity) {
-            "You can only access the viewModel after onActivityCreated()"
-        }
-        ViewModelProviders.of(this, ProfileViewModel.Factory(activity.application))
-            .get(ProfileViewModel::class.java)
-    }
-
+    private val viewModel: ProfileViewModel by viewModels()
     /**
      * RecyclerView Adapter for converting a list of Video to cards.
      */
     private var viewModelAdapter: MultiViewTypeAdapter? = null
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel.profile.observe(viewLifecycleOwner, Observer {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.profileData.observe(viewLifecycleOwner, Observer {
             if (null != it) {
                 viewModelAdapter?.profile = it
             }

@@ -10,12 +10,14 @@ import android.view.ViewGroup
 import android.widget.LinearLayout.HORIZONTAL
 import android.widget.LinearLayout.VERTICAL
 import android.widget.TextView
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.exercise.cvapp.R.drawable
 import com.exercise.cvapp.databinding.*
+import com.exercise.cvapp.databinding.ContactCardBinding.*
 import com.exercise.cvapp.models.Profile
 
 
@@ -85,7 +87,7 @@ class MultiViewTypeAdapter() :
                 )
             )
             CONTACT -> ContactViewHolder(
-                ContactCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                inflate(LayoutInflater.from(parent.context), parent, false)
             )
             EXPERIENCE -> ExperienceViewHolder(
                 ExperienceCardBinding.inflate(
@@ -167,7 +169,7 @@ class MultiViewTypeAdapter() :
 
             val itemDecor = DividerItemDecoration(context, HORIZONTAL)
             itemDecor.setOrientation(VERTICAL)
-            itemDecor.setDrawable(context.getDrawable(drawable.divider))
+            AppCompatResources.getDrawable(context, drawable.divider)?.let { itemDecor.setDrawable(it) }
             binding.experienceList.addItemDecoration(itemDecor)
 
             // This is important, because it forces the data binding to execute immediately,
@@ -190,7 +192,8 @@ class MultiViewTypeAdapter() :
             // Add list view divider
             val itemDecor = DividerItemDecoration(context, HORIZONTAL)
             itemDecor.setOrientation(VERTICAL)
-            itemDecor.setDrawable(context.getDrawable(drawable.divider))
+            AppCompatResources.getDrawable(context, drawable.divider)
+                ?.let { itemDecor.setDrawable(it) }
             binding.educationList.addItemDecoration(itemDecor)
             // This is important, because it forces the data binding to execute immediately,
             // which allows the RecyclerView to make the correct view size measurements

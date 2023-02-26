@@ -33,7 +33,7 @@ class ProfileDaoTest {
 
     database.profileDao.insertAll(profile)
 
-    database.profileDao.getProfile().observeOnce {
+    database.profileDao.getProfileInRoom().observeOnce {
       assertThat(it.name, `is`("Raghava Kolli"))
       assertThat(it.location, `is`("Vancouver, British Columbia, Canada"))
       assertThat(it.contact?.email, `is`("kolli.raghava.reddy@gmail.com"))

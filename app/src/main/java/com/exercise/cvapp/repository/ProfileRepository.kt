@@ -1,18 +1,20 @@
 package com.exercise.cvapp.repository
 
 import androidx.lifecycle.LiveData
-import com.exercise.cvapp.database.ProfileDatabase
+import com.exercise.cvapp.database.ProfileDao
 import com.exercise.cvapp.models.Profile
-import com.exercise.cvapp.models.network.ProfileApi
+import com.exercise.cvapp.models.network.ProfileNetworkService
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class ProfileRepository(private val database: ProfileDatabase) {
+class ProfileRepository @Inject constructor(private val profileDao: ProfileDao) {
 
     /**
      * A profile that can be shown on the screen.
      */
-    val profile: LiveData<Profile> = database.profileDao.getProfile()
+    val profile: LiveData<Profile> = profileDao.getProfileInRoom()
 
     /**
      * Refresh the profile stored in the offline cache.
@@ -23,10 +25,10 @@ class ProfileRepository(private val database: ProfileDatabase) {
      *
      * To actually load the profile for use, observe [profile]
      */
-    suspend fun refreshProfile() {
+    suspend fun fetchProfile() {
         withContext(Dispatchers.IO) {
-            val profile = ProfileApi.RETROFIT_SERVICE.getProfileAsync().await()
-            database.profileDao.insertAll(profile)
+            val profile = ProfileNetworkService.RETROFIT_SERVICE.getProfileAsync().await()
+            profileDao.insertAll(profile)
         }
     }
 }
