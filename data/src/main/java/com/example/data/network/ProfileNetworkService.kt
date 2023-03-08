@@ -1,6 +1,6 @@
-package com.exercise.cvapp.models.network
+package com.example.data.network
 
-import com.exercise.cvapp.models.Profile
+import com.example.data.models.Profile
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

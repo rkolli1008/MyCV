@@ -1,10 +1,10 @@
-package com.exercise.cvapp.models
+package com.example.data.models
 
 import android.os.Parcelable
 import androidx.room.Embedded
 import androidx.room.Entity
 import com.squareup.moshi.Json
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 @Entity(primaryKeys = [("name")])
@@ -19,4 +19,4 @@ data class Profile(
     @Json(name = "education")
     val educationList: List<Education>,
     @Embedded var skills: Skills? = null
-): Parcelable
+) : Parcelable

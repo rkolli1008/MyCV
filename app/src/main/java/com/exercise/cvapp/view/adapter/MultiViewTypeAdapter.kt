@@ -18,12 +18,12 @@ import com.bumptech.glide.request.RequestOptions
 import com.exercise.cvapp.R.drawable
 import com.exercise.cvapp.databinding.*
 import com.exercise.cvapp.databinding.ContactCardBinding.*
-import com.exercise.cvapp.models.Profile
+import com.example.data.models.Profile
 
 
 class MultiViewTypeAdapter() :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    var profile: Profile? = null
+    var profile: com.example.data.models.Profile? = null
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -121,7 +121,7 @@ class MultiViewTypeAdapter() :
     class TopSectionViewHolder(private var binding: TopSectionCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
-        fun bind(profile: Profile) {
+        fun bind(profile: com.example.data.models.Profile) {
             binding.name.text = profile.name
 
             Glide.with(binding.root)
@@ -148,7 +148,7 @@ class MultiViewTypeAdapter() :
      */
     class SummaryViewHolder(private var binding: ProfileSummaryCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(profile: Profile) {
+        fun bind(profile: com.example.data.models.Profile) {
             binding.summary.text = profile.summary
             // This is important, because it forces the data binding to execute immediately,
             // which allows the RecyclerView to make the correct view size measurements
@@ -163,7 +163,7 @@ class MultiViewTypeAdapter() :
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     class ExperienceViewHolder(private var binding: ExperienceCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(profile: Profile) {
+        fun bind(profile: com.example.data.models.Profile) {
             val context = binding.root.context
             binding.experienceList.adapter = ExperienceListAdapter(profile.experienceList)
 
@@ -185,7 +185,7 @@ class MultiViewTypeAdapter() :
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     class EducationViewHolder(private var binding: EducationCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(profile: Profile) {
+        fun bind(profile: com.example.data.models.Profile) {
             val context = binding.root.context
             binding.educationList.adapter = EducationListAdapter(profile.educationList)
 
@@ -207,7 +207,7 @@ class MultiViewTypeAdapter() :
      */
     class SkillsViewHolder(private var binding: SkillsSectionCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(profile: Profile) {
+        fun bind(profile: com.example.data.models.Profile) {
             binding.environment.text = profile.skills?.environment
             binding.methodology.text = profile.skills?.methodologies
             binding.technologies.text = profile.skills?.technologies
@@ -224,8 +224,8 @@ class MultiViewTypeAdapter() :
      */
     class ContactViewHolder(private var binding: ContactCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(profile: Profile) {
-            val profileLink: TextView = binding.profile
+        fun bind(profile: com.example.data.models.Profile) {
+            val profileLink: TextView = binding.profileLink
             val emailLink: TextView = binding.email
             val phoneLink: TextView = binding.phone
 

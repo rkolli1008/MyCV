@@ -8,7 +8,7 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.exercise.cvapp.R
-import com.exercise.cvapp.models.Profile
+import com.example.data.models.Profile
 import com.exercise.cvapp.view.viewmodel.ProfileApiStatus
 
 /**

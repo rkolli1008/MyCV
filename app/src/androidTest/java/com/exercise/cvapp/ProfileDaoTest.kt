@@ -1,35 +1,43 @@
 package com.exercise.cvapp
 
 import androidx.lifecycle.LiveData
-import androidx.test.platform.app.InstrumentationRegistry
-import androidx.test.runner.AndroidJUnit4
-import com.exercise.cvapp.database.ProfileDatabase
-import com.exercise.cvapp.database.getDatabase
-import com.exercise.cvapp.models.Contact
-import com.exercise.cvapp.models.Profile
-import com.exercise.cvapp.models.Skills
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.data.ProfileDatabase
+import dagger.hilt.android.testing.HiltAndroidTest
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import javax.inject.Inject
 
 @RunWith(AndroidJUnit4::class)
+@HiltAndroidTest
 class ProfileDaoTest {
 
+  @Inject
   lateinit var database: ProfileDatabase
 
   @Before
   fun init() {
-    database = getDatabase(InstrumentationRegistry.getInstrumentation().context)
+
   }
 
   @Test
   fun insertAndReadTest() {
-    val contact = Contact("kolli.raghava.reddy@gmail.com", "", "")
-    val skills = Skills("", "", "", "")
-    val profile = Profile("Raghava Kolli", "", "Vancouver, British Columbia, Canada", contact, "", emptyList(), emptyList(), skills)
+    val contact = com.example.data.models.Contact("kolli.raghava.reddy@gmail.com", "", "")
+    val skills = com.example.data.models.Skills("", "", "", "")
+    val profile = com.example.data.models.Profile(
+      "Raghava Kolli",
+      "",
+      "Vancouver, British Columbia, Canada",
+      contact,
+      "",
+      emptyList(),
+      emptyList(),
+      skills
+    )
 
     database.profileDao.insertAll(profile)
 

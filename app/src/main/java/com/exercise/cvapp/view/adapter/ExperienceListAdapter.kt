@@ -8,9 +8,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.exercise.cvapp.R
 import com.exercise.cvapp.databinding.ExperienceListItemBinding
-import com.exercise.cvapp.models.Experience
 
-class ExperienceListAdapter(private val dataSource: List<Experience>): RecyclerView.Adapter<ViewHolder>() {
+class ExperienceListAdapter(private val dataSource: List<com.example.data.models.Experience>): RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ExperienceViewHolder(
             ExperienceListItemBinding.inflate(
@@ -37,7 +36,7 @@ class ExperienceListAdapter(private val dataSource: List<Experience>): RecyclerV
 
     class ExperienceViewHolder(private var binding: ExperienceListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(experience: Experience) {
+        fun bind(experience: com.example.data.models.Experience) {
             Glide.with(binding.root)
                 .load(experience.logo_url)
                 .apply(

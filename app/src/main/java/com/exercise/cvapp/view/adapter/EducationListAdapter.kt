@@ -8,8 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.exercise.cvapp.R
 import com.exercise.cvapp.databinding.EducationListItemBinding
-import com.exercise.cvapp.models.Education
-
+import com.example.data.models.Education
 class EducationListAdapter(private val dataSource: List<Education>): RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return EducationViewHolder(
@@ -36,7 +35,7 @@ class EducationListAdapter(private val dataSource: List<Education>): RecyclerVie
     }
 
     class EducationViewHolder(private var binding: EducationListItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+        ViewHolder(binding.root) {
         fun bind(education: Education) {
             Glide.with(binding.root)
                 .load(education.logo_url)

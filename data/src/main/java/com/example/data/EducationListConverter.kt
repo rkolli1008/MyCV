@@ -1,8 +1,7 @@
-package com.exercise.cvapp.util
+package com.example.data
 
 import androidx.room.TypeConverter
-import com.exercise.cvapp.models.Education
-import com.exercise.cvapp.models.Experience
+import com.example.data.models.Education
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

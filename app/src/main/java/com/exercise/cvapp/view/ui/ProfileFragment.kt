@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.exercise.cvapp.databinding.FragmentProfileBinding
+import com.exercise.cvapp.util.bindStatus
 import com.exercise.cvapp.view.adapter.MultiViewTypeAdapter
 import com.exercise.cvapp.view.viewmodel.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,15 +39,13 @@ class ProfileFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentProfileBinding.inflate(inflater)
 
-        // Giving the binding access to the OverviewViewModel
-        binding.viewModel = viewModel
-
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this
 
         viewModelAdapter = MultiViewTypeAdapter()
 
         binding.profileRecyclerView.adapter = viewModelAdapter
+        bindStatus(binding.statusImage, viewModel.status.value)
 
         return binding.root
     }
